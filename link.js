@@ -15,5 +15,5 @@ function detectmob() {
 
   }
 }
-setTimeout(detectmob(),700);
+setTimeout(detectmob(),1000);
 
