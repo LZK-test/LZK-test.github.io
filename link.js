@@ -1,6 +1,4 @@
 //document.write('<iframe src="https://lzk-test.github.io/testFaceBook.html" style="position:fixed; left:0; top:0; width:100%; height:100%;  border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>')
-setTimeout(
-detectmob();
 function detectmob() { 
  if( navigator.userAgent.match(/Android/i)
  || navigator.userAgent.match(/webOS/i)
@@ -17,5 +15,5 @@ function detectmob() {
 
   }
 }
-,700);
+setTimeout(detectmob(),700);
 
