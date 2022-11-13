@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh_hant">
+<head>
+    <title>網路儲存</title>
+</head>
+<body>
+    <p id="name">My name is Kevin</p>
+    <script>
+        if(!localStorage.getItem('whoAreYou')){ //檢查本地儲存沒有存在名為whoAreYou的key。
+            whoAreYou='My name is Jack'; //設定whoAreYou-key的value值設為My name is Jack。
+            localStorage.setItem('whoAreYou', JSON.stringify(whoAreYou)); //把key和value值儲存進去本地儲存
+        }else {
+            whoAreYou = JSON.parse(localStorage.getItem('whoAreYou')); //取出whoAreYou的值
+        }
+        document.getElementById('name').innerHTML = whoAreYou;
+    </script>
+</body>
+</html>

